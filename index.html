@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blod' Hel Tattoo Studio | Sacred Blood & Iron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nordic-black: #050505;
+            --nordic-blood: #b91c1c; 
+            --nordic-frost: #ffffff;
+            --nordic-gray: #1a1a1a;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--nordic-black);
+            color: var(--nordic-frost);
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.15em;
+        }
+        .text-blood {
+            color: var(--nordic-blood);
+        }
+        .bg-blood {
+            background-color: var(--nordic-blood);
+        }
+        .border-blood {
+            border-color: var(--nordic-blood);
+        }
+        .text-gradient-blood {
+            background: linear-gradient(to right, #ffffff, var(--nordic-blood), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stone-texture {
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+        }
+        .splatter-bg {
+          background-image: radial-gradient(circle at 50% 50%, rgba(185, 28, 28, 0.1) 0%, transparent 70%);
+        }
+        ::selection {
+            background: var(--nordic-blood);
+            color: white;
+        }
+        .rune-font {
+          font-family: 'Cinzel', serif;
+          font-weight: 900;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1), transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Entrance Animations */
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fade-in {
+          animation: fadeIn 1.5s ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up {
+          animation: slideUp 1s ease-out forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+</head>
+<body class="stone-texture">
+    <div id="root"></div>
+</body>
+</html>
