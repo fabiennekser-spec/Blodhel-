@@ -9,18 +9,18 @@ export const getTattooIdeas = async (prompt: string, imageBase64?: string, style
   
   const selectedStyleString = styles && styles.length > 0 
     ? styles.join(', ') 
-    : "High-contrast Nordic Blackwork, Primal Runes, and Blood Red splatters";
+    : "Clean Nordic Blackwork, Fineline Runes, and Mist-inspired shading";
 
   const parts: any[] = [
     { text: `The user is seeking a tattoo design for "Blod' Hel Tattoo Studio".
     Aesthetic Rules:
-    1. STYLE: ${selectedStyleString}. The design must strictly adhere to these styles while maintaining the studio's signature dark, high-contrast look.
-    2. THEME: Raven iconography (Hugin/Munin), Norse Mythology, and Sacred Geometry.
-    3. COLORS: Primarily Black and White with intentional, aggressive Blood Red accents.
+    1. STYLE: ${selectedStyleString}. High-contrast blackwork with elegant, sharp Nordic linework.
+    2. THEME: Nature-focused Nordic mythology (Yggdrasil, Fjords, Mountains), Ancestral Runes, and Celestial Geometry.
+    3. COLORS: Primarily deep black ink with soft slate-grey shading and occasional crisp white highlights. AVOID all red or bloody imagery. Focus on "Frost" and "Stone" textures.
     
     User Request: "${prompt}"
     
-    Generate 3 unique tattoo concepts in this specific Blod' Hel style.` }
+    Generate 3 unique tattoo concepts that feel ancient, serene, and majestic.` }
   ];
 
   if (imageBase64) {
@@ -30,7 +30,7 @@ export const getTattooIdeas = async (prompt: string, imageBase64?: string, style
         data: imageBase64.split(',')[1] // Extract base64 part
       }
     });
-    parts[0].text += "\nUse the attached image as a visual reference for the composition or symbols.";
+    parts[0].text += "\nUse the attached image as a visual reference for the composition or natural elements.";
   }
 
   const response = await ai.models.generateContent({
@@ -67,9 +67,9 @@ export const generateTattooImage = async (prompt: string): Promise<string> => {
     contents: {
       parts: [
         { text: `A professional tattoo design for Blod' Hel Studio. 
-        High-contrast blackwork, sharp Nordic runes, a central raven figure, and aggressive red blood splatter accents. 
-        Solid white background. Design should look hand-inked, primal, and mythic. 
-        Concept: ${prompt}` }
+        Clean high-contrast blackwork, sharp Nordic runes, a majestic mountain or forest silhouette. 
+        Serene and mythic. Solid white background. Linework should feel like etched stone.
+        NO RED, NO BLOOD, NO SKULLS. Concept: ${prompt}` }
       ]
     },
     config: {

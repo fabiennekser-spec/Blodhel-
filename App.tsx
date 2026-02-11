@@ -21,7 +21,7 @@ const App: React.FC = () => {
       {/* Scroll to Top Feature */}
       <button 
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-red-800 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-white hover:text-black transition-all transform hover:scale-110 z-40"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-slate-800 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-white hover:text-black transition-all transform hover:scale-110 z-40 border border-slate-700/50"
       >
         <i className="fas fa-arrow-up"></i>
       </button>

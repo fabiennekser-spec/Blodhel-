@@ -33,17 +33,17 @@ const Gallery: React.FC = () => {
     <section id="gallery" ref={sectionRef} className="py-32 bg-[#050505] relative overflow-hidden">
       {/* Background Runic Accents */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-          <div className="absolute top-20 -left-10 text-[15rem] text-red-900 rotate-12 select-none font-display opacity-10">ᚠ</div>
-          <div className="absolute bottom-40 -right-10 text-[15rem] text-red-900 -rotate-12 select-none font-display opacity-10">ᚹ</div>
+          <div className="absolute top-20 -left-10 text-[15rem] text-slate-900 rotate-12 select-none font-display opacity-10">ᚠ</div>
+          <div className="absolute bottom-40 -right-10 text-[15rem] text-slate-900 -rotate-12 select-none font-display opacity-10">ᚹ</div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-24 max-w-3xl mx-auto reveal">
-          <span className="text-red-700 text-xs font-black uppercase tracking-[0.6em] mb-4 block">The Archives</span>
-          <h2 className="text-5xl md:text-7xl font-black mb-8">Etched in <span className="text-gradient-blood">Blood & Ash</span></h2>
-          <div className="h-[2px] w-24 bg-red-800 mx-auto mb-10"></div>
-          <p className="text-zinc-500 text-lg leading-relaxed italic">
-            "We do not merely paint on skin; we open the gates to Valhalla with every stroke."
+          <span className="text-slate-500 text-xs font-black uppercase tracking-[0.6em] mb-4 block">The Archives</span>
+          <h2 className="text-5xl md:text-7xl font-black mb-8">Etched in <span className="text-gradient-frost">Frost & Stone</span></h2>
+          <div className="h-[2px] w-24 bg-slate-800 mx-auto mb-10"></div>
+          <p className="text-zinc-500 text-lg leading-relaxed italic font-light">
+            "We do not merely mark skin; we etch the spirit's journey into the ice of memory."
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const Gallery: React.FC = () => {
           {galleryItems.map((item, index) => (
             <div 
               key={item.id} 
-              className="group relative overflow-hidden aspect-[3/4] bg-zinc-950 border border-zinc-900 hover:border-red-900/50 reveal cursor-pointer transition-all duration-500 shadow-lg hover:shadow-red-900/10"
+              className="group relative overflow-hidden aspect-[3/4] bg-zinc-950 border border-zinc-900 hover:border-slate-700/50 reveal cursor-pointer transition-all duration-500 shadow-lg hover:shadow-slate-900/10"
               style={{ transitionDelay: `${index * 100}ms` }}
               onClick={() => setSelectedImage(item.id)}
             >
@@ -62,9 +62,9 @@ const Gallery: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-8">
                 <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-red-600 text-[10px] font-black uppercase tracking-[0.3em] mb-2 block">{item.category}</span>
-                  <h3 className="text-2xl font-bold text-white mb-4">Masterpiece {item.id}</h3>
-                  <div className="w-12 h-[2px] bg-red-700"></div>
+                  <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-2 block">{item.category}</span>
+                  <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-tighter">Masterpiece {item.id}</h3>
+                  <div className="w-12 h-[2px] bg-slate-500"></div>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@ const Gallery: React.FC = () => {
         </div>
         
         <div className="mt-24 text-center reveal">
-          <a href="#booking" className="inline-block px-16 py-5 border border-zinc-800 text-zinc-500 hover:text-white hover:border-red-700 hover:bg-red-900/10 transition-all uppercase text-xs font-black tracking-[0.5em]">
+          <a href="#booking" className="inline-block px-16 py-5 border border-zinc-800 text-zinc-500 hover:text-white hover:border-slate-500 hover:bg-slate-900/10 transition-all uppercase text-xs font-black tracking-[0.5em]">
             Claim Your Mark
           </a>
         </div>
@@ -81,20 +81,20 @@ const Gallery: React.FC = () => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in" onClick={() => setSelectedImage(null)}>
-          <button className="absolute top-8 right-8 text-white hover:text-red-600 transition-colors z-[101]">
+          <button className="absolute top-8 right-8 text-white hover:text-slate-400 transition-colors z-[101]">
             <i className="fas fa-times text-4xl"></i>
           </button>
           <div className="max-w-5xl max-h-[90vh] relative" onClick={(e) => e.stopPropagation()}>
             <img 
               src={galleryItems.find(i => i.id === selectedImage)?.url} 
               alt="Full view" 
-              className="max-w-full max-h-[85vh] object-contain border border-zinc-800 shadow-[0_0_50px_rgba(185,28,28,0.15)]"
+              className="max-w-full max-h-[85vh] object-contain border border-zinc-800 shadow-[0_0_50px_rgba(255,255,255,0.05)]"
             />
             <div className="mt-6 text-center">
-               <h3 className="text-3xl font-black uppercase tracking-[0.2em] text-red-700 font-display">
+               <h3 className="text-3xl font-black uppercase tracking-[0.2em] text-slate-300 font-display">
                  {galleryItems.find(i => i.id === selectedImage)?.category}
                </h3>
-               <p className="text-zinc-500 text-xs tracking-widest uppercase mt-2">Blod' Hel Original</p>
+               <p className="text-zinc-500 text-[8px] tracking-[0.5em] uppercase mt-2">Blod' Hel Original</p>
             </div>
           </div>
         </div>
